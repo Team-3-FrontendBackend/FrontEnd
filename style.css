@@ -1,0 +1,29 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    max-width: 800px;
+    margin: auto;
+}
+
+.formcontainer {
+    background-color: whitesmoke;
+    margin-top: 50px;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+label {
+    margin: 10px;
+}
+
+.signupbutton {
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
