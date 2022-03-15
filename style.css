@@ -11,7 +11,7 @@ main {
 
 .formcontainer {
     background-color: whitesmoke;
-    margin-top: 50px;
+    margin-top: 100px;
     border: 2px solid black;
     padding: 10px;
 }
@@ -26,4 +26,15 @@ label {
 
 h1 {
     text-align: center;
+}
+
+header {
+    background-color: #A1ADEC;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+body {
+    margin: 0;
 }
