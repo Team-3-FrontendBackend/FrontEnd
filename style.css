@@ -1,3 +1,8 @@
+:root {
+    --primary-color: #6D7CCB;
+    --secondary-color: #A1ADEC;
+  }
+
 form {
     display: flex;
     flex-direction: column;
@@ -22,6 +27,7 @@ label {
 
 .signupbutton {
     margin: auto;
+    background-color:#A1ADEC;
 }
 
 h1 {
@@ -29,12 +35,25 @@ h1 {
 }
 
 header {
-    background-color: #A1ADEC;
+    background-color: var(--primary-color);
     border: 2px solid black;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.log-out-button {
+    padding: 0 20px;
 }
 
 body {
     margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    background-color: var(--secondary-color);
 }
