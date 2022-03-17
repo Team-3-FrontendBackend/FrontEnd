@@ -1,6 +1,7 @@
 :root {
     --primary-color: #6D7CCB;
     --secondary-color: #A1ADEC;
+    --alt-color: #;
   }
 
 form {
@@ -27,7 +28,6 @@ label {
 
 .signupbutton {
     margin: auto;
-    background-color:#A1ADEC;
 }
 
 h1 {
@@ -44,6 +44,8 @@ header {
 
 .log-out-button {
     padding: 0 20px;
+    background-color:#A1ADEC;
+
 }
 
 body {
