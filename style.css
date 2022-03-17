@@ -1,0 +1,61 @@
+:root {
+    --primary-color: #6D7CCB;
+    --secondary-color: #A1ADEC;
+    --alt-color: #;
+  }
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    max-width: 800px;
+    margin: auto;
+}
+
+.formcontainer {
+    background-color: whitesmoke;
+    margin-top: 100px;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+label {
+    margin: 10px;
+}
+
+.signupbutton {
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+header {
+    background-color: var(--primary-color);
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.log-out-button {
+    padding: 0 20px;
+    background-color:#A1ADEC;
+
+}
+
+body {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    background-color: var(--secondary-color);
+}
