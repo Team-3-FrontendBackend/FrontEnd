@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CMS</title>
     <link rel="stylesheet" href="style.css">
+    <script type="module">
+        // Normally we have been creating a separate js file to hold this. I put it here to show that you can...the next question is should you?
+        // Advantages to putting it here: one less file to request and download.
+        // Disadvantages: it breaks the pattern we have established with our other pages, and the separation of concerns...
+        import Admin from "./js/admin.js";
+
+        const myAdmin = new Admin();
+        myAdmin.setLogin();
+      </script>
 </head>
 <body>
     <header>
@@ -17,18 +26,19 @@
             <form>
                 <label>
                     Username
-                    <input name="Username" id="Username" type="text" required/>
+                    <input name="Username" id="username" type="text" required/>
                 </label>
                 <label>
                     Password
-                    <input name="Password" id="Password" type="text" required/>
+                    <input name="Password" id="password" type="text" required/>
                 </label>
-                <input type="submit" value="Log in">
+                
                 <input type="hidden" name="action" value="login">
             </form>
             <a href="register.html" class="signupbutton">
                 <button>Sign Up Page</button>
             </a>
+            <button id="loginButton">Login</button>
         </div>
     </main>
     <footer>
