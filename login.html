@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CMS</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -24,8 +24,9 @@
                     <input name="Password" id="Password" type="text" required/>
                 </label>
                 <input type="submit" value="Log in">
+                <input type="hidden" name="action" value="login">
             </form>
-            <a href="../FrontEnd/register.html" class="signupbutton">
+            <a href="register.html" class="signupbutton">
                 <button>Sign Up Page</button>
             </a>
         </div>
