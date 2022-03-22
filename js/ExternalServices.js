@@ -14,8 +14,8 @@ export default class ExternalServices  {
   constructor() {
   }
   // make a request to the server for a login token.
-  // requires: { email: 'someemail', password: 'somepassword' }
-  // returns: a valid jwt token if the email and password are valid.
+  // requires: { username: 'someusername', password: 'somepassword' }
+  // returns: a valid jwt token if the username and password are valid.
   async loginRequest(user) {
     const options = {
       method: 'POST',

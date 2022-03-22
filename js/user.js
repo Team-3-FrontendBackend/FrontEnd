@@ -1,6 +1,6 @@
 import ExternalServices from './ExternalServices.js';
 
-export default class Admin {
+export default class User {
   constructor() {
     this.token = null;
     this.services = new ExternalServices();
@@ -23,8 +23,6 @@ export default class Admin {
       document.querySelector('#loginButton').addEventListener('click', (e) => {
         const username = document.querySelector('#username').value;
         const password = document.querySelector('#password').value;
-        console.log(username)
-        console.log(password)
         this.login({username, password});
       });
   }
