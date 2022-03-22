@@ -7,6 +7,7 @@
     <title>CMS</title>
     <link rel="stylesheet" href="./css/small.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script/registerUser.js"></script>
 </head>
 <body>
     <header>
@@ -23,18 +24,26 @@
             <h2>Enter information to Create Account</h2>
             <form>
                 <label>
-                    Username
-                    <input name="Username" id="Username" type="text" required/>
+                    Username:
+                    <input name="username" id="username" type="text" required minlength="6" regexp="^[a-zA-Z0-9_]*$"
+                    />
                 </label>
                 <label>
-                    Password
-                    <input name="Password" id="Password" type="text" required/>
+                    Password:
+                    <input name="password" id="password" type="text" required
+                    pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"/>
+                </label>
+                <label>
+                    Confirm password:
+                    <input name="confirmPasword" id="confirm-password" type="text" required 
+                    pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                </label>
+                <label>
+                  Website name:
+                  <input name="siteName" id="site-name" type="text" required>
                 </label>
                 <input type="submit" value="Register">
             </form>
-            <a href="login.html" class="signupbutton">
-                <button>Log in Page</button>
-            </a>
         </div>
     </main>
     <footer>
