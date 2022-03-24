@@ -1,5 +1,13 @@
 url = "";
 
+async function convertToJson(res) {
+    const data = await res.json();
+    if (res.ok) {
+      return data
+    } else {
+      throw { name: 'servicesError', message: data };
+    }
+  }
 
 export default class createUser{
     constructor(username, password, siteName){
@@ -7,6 +15,7 @@ export default class createUser{
         this.password = password;
         this.siteName = siteName;
         this.siteUrl = "";
+        this.userBody = "";
     }
 
     init(){
@@ -21,10 +30,19 @@ export default class createUser{
             siteUrl: this.siteUrl
         };
 
-        return requestBody;
+        this.userBody = JSON.stringify(requestBody);
     }
 
     sendRequest(){
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(this.userBody)
+        }
+        const response = await fetch(baseURL + 'signup', options).then(convertToJson);
+        return response
 
     }
 }
