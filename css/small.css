@@ -114,3 +114,21 @@ form {
     align-items: center;
 }
 
+.form-container {
+    background-color: whitesmoke;
+    margin-top: 100px;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+label {
+    margin: 10px;
+}
+
+.signup-button {
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
