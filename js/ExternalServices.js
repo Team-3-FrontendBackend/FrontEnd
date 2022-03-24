@@ -25,6 +25,6 @@ export default class ExternalServices  {
       body: JSON.stringify(user)
     }
     const response = await fetch(baseURL + 'login', options).then(convertToJson);
-    return response.accessToken;
+    return response;
   }
 }

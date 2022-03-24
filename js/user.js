@@ -12,12 +12,13 @@ export default class User {
     try {
       this.token = await this.services.loginRequest(creds);
       window.sessionStorage.setItem('creds',this.token)
+      // console.log(this.token)
       
     } 
     catch(err) {
       console.log(err)
-      const messageOutput = document.getElementById("errMessage");
-      messageOutput.innerHTML = err.message.message;
+      const messageElement = document.getElementById("errMessage");
+      messageElement.innerHTML = err.message.message;
     }
   }
   setLogin() {
