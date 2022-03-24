@@ -1,0 +1,1 @@
+const rUsername = document.querySelector("#r-username").value;
