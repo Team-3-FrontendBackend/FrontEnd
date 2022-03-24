@@ -12,6 +12,7 @@ export default class User {
     try {
       this.token = await this.services.loginRequest(creds);
       window.sessionStorage.setItem('creds',this.token)
+      window.location.href = "home.html";
       // console.log(this.token)
       
     } 

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/small.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>CMS</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <script type="module">
         // Normally we have been creating a separate js file to hold this. I put it here to show that you can...the next question is should you?
         // Advantages to putting it here: one less file to request and download.
@@ -23,6 +23,9 @@
     <header>
       <div id="header-logo">
         <img src="./images/logo.png" alt="website logo" />
+      </div>
+      <div id="user-options">
+        <p><a href=register.html> Sign Up</a></p>
       </div>
     </header>
     <main>
@@ -40,9 +43,6 @@
                 
                 <input type="hidden" name="action" value="login">
             </form>
-            <a href="register.html" class="signup-button">
-                <button>Sign Up Page</button>
-            </a>
             <button id="loginButton">Login</button>
         </div>
         <p id="errMessage">
