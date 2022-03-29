@@ -11,7 +11,7 @@ export default class User {
     // this allows us that flexibility without having to write a bunch of login methods
     try {
       this.token = await this.services.loginRequest(creds);
-      window.sessionStorage.setItem('creds',this.token)
+      window.sessionStorage.setItem('creds',JSON.stringify(this.token));
       window.location.href = "home.html";
       // console.log(this.token)
       
@@ -28,6 +28,7 @@ export default class User {
       document.querySelector('#loginButton').addEventListener('click', (e) => {
         const username = document.querySelector('#username').value;
         const password = document.querySelector('#password').value;
+        window.sessionStorage.setItem('user', username);
         this.login({username, password});
       });
   }
