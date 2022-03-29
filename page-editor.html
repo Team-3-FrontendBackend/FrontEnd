@@ -6,15 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/small.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Document</title>
-    <script type="module">
-        import Register from './js/registerUser.js';
-
-        const registerUser = new Register();
-
-        registerUser.setRegister();
-
-    </script>
+    <title>Page Editor | Web Projects</title>
   </head>
   <body>
     <header>
@@ -22,24 +14,23 @@
         <img src="./images/logo.png" alt="website logo" />
       </div>
       <div id="user-options">
-        <p><a href=login.html>Log in </a></p>
+        <p><a href=login.html>Log in |</a></p>
+        <p><a href=register.html> Sign Up</a></p>
       </div>
     </header>
     <main>
-        <form id="register-form">
-            <label>
-                Username: <input type="text" id="r-username">
+        <iframe src="" frameborder="1" title="Page Preview"></iframe>
+        <form action="" method="post" id="editing-tools">
+            <label for="title">Section Title
+                <input name="title" type="text" id="title">
             </label>
-            <label>
-                Password: <input type="password" id="r-password">
+            <label for="image">Upload Image
+                <input name="image" type="file" id="image">
             </label>
-            <label>
-                Confirm password: <input type="password" id="confirm-password">
+            <label for="text">Section Text
+                <textarea name="text" id="text" cols="30" rows="10"></textarea>
             </label>
-            <label>
-                Site name: <input type="text" id="site-name">
-            </label>
-            <button id="registerBtn">Register</button>
+            <input type="submit" value="Create Section" class="sumbit">
         </form>
     </main>
     <footer>

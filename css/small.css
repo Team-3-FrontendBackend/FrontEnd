@@ -71,47 +71,43 @@ footer{
     width: 10%;
     margin: 0 auto;
     margin-top: 0.5rem;
-  }
-  
-  .fa-facebook {
+}
+
+.fa-facebook {
     background: #3b5998;
     color: white;
-  }
-  
-  .fa-twitter {
+}
+
+.fa-twitter {
     background: #55acee;
     color: white;
-  }
+}
 
-  .fa-google {
+.fa-google {
     background: #dd4b39;
     color: white;
-  }
+}
 
 #about-us p{
     width:75%;
     margin:0 auto;
 }
 
-.formcontainer {
-    background-color: whitesmoke;
-    margin-top: 100px;
-    border: 2px solid black;
-    padding: 10px;
-}
-
-label {
-    margin: 10px;
-}
-
-.signupbutton {
-    margin: auto;
-}
-
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/*Page Editor*/
+iframe {
+    width: 100%;
+    height: 300px;
+}
+
+#editing-tools {
+    align-items: flex-start;
+    margin-left: 20px;
 }
 
 .form-container {
@@ -131,4 +127,20 @@ label {
 
 h1 {
     text-align: center;
+}
+
+#register-form input, #register-form label{
+    font-family:"Lato", sans-serif;
+    display:block;
+}
+
+#register-form input{
+    width:15rem;
+    height:1.5rem;
+}
+
+#registerBtn{
+    padding: 0.5rem 1rem;
+    background-color: var(--prussian-blue);
+    color:white;
 }
