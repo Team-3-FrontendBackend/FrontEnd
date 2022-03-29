@@ -1,48 +1,43 @@
-url = "";
+import ExternalServices from './ExternalServices.js';
 
-async function convertToJson(res) {
-    const data = await res.json();
-    if (res.ok) {
-      return data
-    } else {
-      throw { name: 'servicesError', message: data };
-    }
-  }
+function formatUrl(name){
 
-export default class createUser{
-    constructor(username, password, siteName){
-        this.username = username;
-        this.password = password;
-        this.siteName = siteName;
-        this.siteUrl = "";
-        this.userBody = "";
+    const url = "/" + name.replaceAll(" ", "-");
+    return url;
+}
+
+export default class Register{
+    constructor(){
+        this.apiMessage = null;
+        this.services = new ExternalServices('signup');
     }
 
-    init(){
-        // Format siteUrl 
-        this.siteUrl = this.siteName.replaceAll(" ", "-");
-
-        // Create js object.
-        requestBody = {
-            userName: this.userName,
-            password: this.password,
-            siteName: this.siteName,
-            siteUrl: this.siteUrl
-        };
-
-        this.userBody = JSON.stringify(requestBody);
-    }
-
-    sendRequest(){
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(this.userBody)
+    async register(userInfo){
+        
+        try {
+            this.apiMessage = await this.services.apiRequest(userInfo);
+            window.location.href = "login.html";   
         }
-        const response = await fetch(baseURL + 'signup', options).then(convertToJson);
-        return response
-
+        catch(err){
+            console.log(err);
+        }
     }
+
+    setRegister(){
+
+        document.querySelector('#registerBtn').addEventListener('click', (e)=>{
+            e.preventDefault();
+            const username = document.querySelector("#r-username").value;
+            const password = document.querySelector("#r-password").value;
+            const confirmPassword = document.querySelector('#confirm-password').value;
+            const siteName = document.querySelector('#site-name').value;
+            const url = formatUrl(siteName);
+
+            console.log(JSON.stringify({username, password, confirmPassword, url, siteName}));
+
+            this.register({username, password, confirmPassword, url, siteName});
+        });
+        
+    }
+
 }
