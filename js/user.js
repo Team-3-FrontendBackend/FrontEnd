@@ -10,9 +10,10 @@ export default class User {
     // there could be many different things the user wants to do after logging in...
     // this allows us that flexibility without having to write a bunch of login methods
     try {
+
+
       this.token = await this.services.apiRequest(creds);
-      // Shouldnt this be "this.token['token']?"
-      window.sessionStorage.setItem('creds',this.token)
+      window.sessionStorage.setItem('creds',JSON.stringify(this.token));
       window.location.href = "home.html";
       // console.log(this.token)
       

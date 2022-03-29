@@ -22,7 +22,7 @@ async function renderProjectsList(){
     const projectData = await getProjectsData()
     console.log(projectData);
     const ul = document.getElementById("projectList")
-    ul.innerHTML = '<li><a href="./pageEditor.html"> ' + projectData.page.name  + "</a></li>";
+    ul.innerHTML = '<li><a href="./page-editor.html"> ' + projectData.page.name  + "</a></li>";
 }
 
 
