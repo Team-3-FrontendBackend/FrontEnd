@@ -71,41 +71,26 @@ footer{
     width: 10%;
     margin: 0 auto;
     margin-top: 0.5rem;
-  }
-  
-  .fa-facebook {
+}
+
+.fa-facebook {
     background: #3b5998;
     color: white;
-  }
-  
-  .fa-twitter {
+}
+
+.fa-twitter {
     background: #55acee;
     color: white;
-  }
+}
 
-  .fa-google {
+.fa-google {
     background: #dd4b39;
     color: white;
-  }
+}
 
 #about-us p{
     width:75%;
     margin:0 auto;
-}
-
-.form-container {
-    background-color: whitesmoke;
-    margin-top: 100px;
-    border: 2px solid black;
-    padding: 10px;
-}
-
-label {
-    margin: 10px;
-}
-
-.signup-button {
-    margin: auto;
 }
 
 form {
@@ -123,4 +108,23 @@ iframe {
 #editing-tools {
     align-items: flex-start;
     margin-left: 20px;
+}
+
+.form-container {
+    background-color: whitesmoke;
+    margin-top: 100px;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+label {
+    margin: 10px;
+}
+
+.signup-button {
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
 }
