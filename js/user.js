@@ -29,6 +29,7 @@ export default class User {
       document.querySelector('#loginButton').addEventListener('click', (e) => {
         const username = document.querySelector('#username').value;
         const password = document.querySelector('#password').value;
+        window.sessionStorage.setItem('user', username);
         this.login({username, password});
       });
   }
