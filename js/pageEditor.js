@@ -6,4 +6,13 @@ class PageEditor {
         this.services = new ExternalServices('admin/' + siteName);
         this.siteName = siteName;
     }
+
+    editPage(){
+
+    }
+    getValues(){
+        
+    }
 }
+
+
