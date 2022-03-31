@@ -1,87 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CMS</title>
-    <link rel="stylesheet" href="./css/small.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/small.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="script/user.js"></script>
-</head>
-<body>
+    <title>Document</title>
+    <script type="module">
+        import Register from './js/registerUser.js';
+
+        const registerUser = new Register();
+
+        registerUser.setRegister();
+
+    </script>
+  </head>
+  <body>
     <header>
-        <div id="header-logo">
-          <img src="./images/logo.png" alt="website logo" />
-        </div>
-        <div id="user-options">
-          <p><a href=login.html>Log in</a></p>
-        </div>
-      </header>
+      <div id="header-logo">
+        <img src="./images/logo.png" alt="website logo" />
+      </div>
+      <div id="user-options">
+        <p><a href=login.html>Log in </a></p>
+      </div>
+    </header>
     <main>
-        <div class="form-container">
-            <h1>Enter information to Create Account</h1>
-            <form>
-                <label>
-                    Username:
-                    <input name="rUsername" id="r-username" type="text" required minlength="6" regexp="^[a-zA-Z0-9_]*$"
-                    />
-                </label>
-                <label>
-                    Password:
-                    <input name="rPassword" id="r-password" type="text" required
-                    pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"/>
-                </label>
-                <label>
-                    Confirm password:
-                    <input name="confirmPasword" id="confirm-password" type="text" required 
-                    pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
-                </label>
-                <label>
-                  Website name:
-                  <input name="siteName" id="site-name" type="text" required>
-                </label>
-                <input type="submit" value="Register">
-            </form>
-        </div>
+        <form id="register-form">
+            <label>
+                Username: <input type="text" id="r-username">
+            </label>
+            <label>
+                Password: <input type="password" id="r-password">
+            </label>
+            <label>
+                Confirm password: <input type="password" id="confirm-password">
+            </label>
+            <label>
+                Site name: <input type="text" id="site-name">
+            </label>
+            <button id="registerBtn">Register</button>
+        </form>
     </main>
     <footer>
-        <section>
-          <h3>This website was designed by [Team 3]</h3>
-          <div id="footer-sections">
-            <section id="social-media">
-              <h4>Follow Us</h4>
-              <div class="social-media-icons">
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-twitter"></a>
-                <a href="#" class="fa fa-google"></a>
-              </div>
-            </section>
-            <section id="contact-info">
-                <h4>Contact Us</h4>
-                <p>Email: fake@email.com</p>
-                <p>Phone Number: 111-111-111</p>
-                <p>Address: fake address #123</p>
-            </section>
-            <section id="about-us">
-                <h4>About Web Projects</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repgit rehenderit in 
-                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-            </section>
-          </div>
-        </section>
-      </footer>
-      <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-      <script>
-        WebFont.load({
-          google: {
-            families: ["Lato", "Montserrat"],
-          },
-        });
-      </script>
-
-</body>
+      <section>
+        <h3>This website was designed by [Team 3]</h3>
+        <div id="footer-sections">
+          <section id="social-media">
+            <h4>Follow Us</h4>
+            <div class="social-media-icons">
+              <a href="#" class="fa fa-facebook"></a>
+              <a href="#" class="fa fa-twitter"></a>
+              <a href="#" class="fa fa-google"></a>
+            </div>
+          </section>
+          <section id="contact-info">
+              <h4>Contact Us</h4>
+              <p>Email: fake@email.com</p>
+              <p>Phone Number: 111-111-111</p>
+              <p>Address: fake address #123</p>
+          </section>
+          <section id="about-us">
+              <h4>About Web Projects</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repgit rehenderit in 
+                  voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                  non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+          </section>
+        </div>
+      </section>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: ["Lato", "Montserrat"],
+        },
+      });
+    </script>
+  </body>
 </html>

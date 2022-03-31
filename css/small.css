@@ -128,3 +128,19 @@ label {
 h1 {
     text-align: center;
 }
+
+#register-form input, #register-form label{
+    font-family:"Lato", sans-serif;
+    display:block;
+}
+
+#register-form input{
+    width:15rem;
+    height:1.5rem;
+}
+
+#registerBtn{
+    padding: 0.5rem 1rem;
+    background-color: var(--prussian-blue);
+    color:white;
+}
