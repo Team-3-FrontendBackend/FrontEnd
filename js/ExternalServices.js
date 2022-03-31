@@ -29,12 +29,8 @@ export default class ExternalServices  {
     const response = await fetch(baseURL + this.endpoint, options).then(convertToJson);
     return response;
   }
-}
 
-export class EditorExternalServices  {
-  constructor() {
-  }
-  async updatePage(pageData, token) {
+  async updatePageRequest(pageData, token) {
     const options = {
       method: 'PUT',
       headers: {
@@ -45,7 +41,7 @@ export class EditorExternalServices  {
       body: JSON.stringify(pageData)
     }
     // Figure out how to pass the name to the API, maybe use local storage
-    const response = await fetch(baseURL + 'admin/', options).then(convertToJson);
+    const response = await fetch(baseURL + this.endpoint, options).then(convertToJson);
     return response;
   }
 }
