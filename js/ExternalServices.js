@@ -1,5 +1,4 @@
 const baseURL = 'https://cms-societies.herokuapp.com/';
-               
 
 async function convertToJson(res) {
   const data = await res.json();
@@ -27,6 +26,21 @@ export default class ExternalServices  {
       body: JSON.stringify(user)
     }
     // Instead of baseURL + login, I changed to make it reusable.
+    const response = await fetch(baseURL + this.endpoint, options).then(convertToJson);
+    return response;
+  }
+
+  async updatePageRequest(pageData, token) {
+    const options = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        // pass in authorization token here
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify(pageData)
+    }
+    // Figure out how to pass the name to the API, maybe use local storage
     const response = await fetch(baseURL + this.endpoint, options).then(convertToJson);
     return response;
   }
