@@ -44,4 +44,15 @@ export default class ExternalServices  {
     const response = await fetch(baseURL + this.endpoint, options).then(convertToJson);
     return response;
   }
+
+  async getPageRequest(token, siteUrl){
+    const options = {
+      method : 'GET',
+      headers : {
+        'Authorization': `Bearer ${token}`
+      }
+    }
+    const response = await fetch(baseURL + this.endpoint, options).then(convertToJson);
+    return response;
+  }
 }
