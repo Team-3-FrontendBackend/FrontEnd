@@ -9,7 +9,7 @@ async function addPage(){
   // Right now we are using the request for home pages, need to change it when the backend finishes the endpoint for all pages
   
   try {
-    response = postNewPage()
+    response = getAllPages()
     console.log(response); 
     // This is where the response will be manipulated and placed on the page
 }
@@ -18,14 +18,15 @@ async function addPage(){
 }
 }
 
-async function postNewPage(){
+async function getAllPages(){
   const options = {
-      method: "Post",
+      method: "Get",
       headers: {
         "Authorization": `Bearer ${creds.token}`
       }
     }
-    const response = await fetch(baseURL + "admin/joes-site", options);
+    // "admin/joes-site" will be replaced with a dynamic value after the beackend team finishes that endpoint
+    const response = await fetch(baseURL + "admin", options);
     const data = await response.json()
     console.log(data);
     return data;
