@@ -20,20 +20,16 @@ async function getPageLinks(){
 
 async function renderProjectsList(){
     const pageLinks = await getPageLinks();
-    console.log(pageLinks);
     const ul = document.getElementById("projectList");
     ul.innerHTML = pageLinks.links.map(link=> `<li><a href="page-editor.html">${getLinkName(link)}</a></li>`).join("");
     // put ending url in local storage
-    let testurl = pageLinks.links[0]
-    console.log(testurl)
-    let spliturl = testurl.split(".com/")
-    console.log(spliturl)
+   
 }
 
 // Split link name, store appropraite endpoint in session storage for page editor
 
 function getLinkName(link) {
-  let spliturl = link.split(".com/");
+  let spliturl = link.split(".com/admin/");
     return spliturl[1];
 }
 renderProjectsList();
