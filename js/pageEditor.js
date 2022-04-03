@@ -1,17 +1,6 @@
 import ExternalServices from './ExternalServices.js';
 
-function htmlRenderer(title, text, imgBase64) {
-    
-    let sectionDiv = `<div class="section">
-    <h2>${title}</h2>
-    <p>${text}</p>`;
 
-    if(typeof imgBase64 != undefined){
-        sectionDiv += `<img src="${imgBase64}">`;
-    }
-    
-    sectionDiv += `</div>`;
-}
 
 export default class PageEditor {
     constructor(siteName, token) {
@@ -25,9 +14,9 @@ export default class PageEditor {
 
             this.apiMessage = await this.services.updatePageRequest(pageData, this.token); 
             const pageInfo = await this.services.getPageRequest(this.token);
-
-            console.log(this.apiMessage);
-            console.log(pageInfo);
+            
+            document.querySelector('#home-link').innerHTML = `<a href="site-preview.html?url=${this.siteName}">Visit your new home page</a>`;
+            
         }
         catch(err){
             console.error(err);
@@ -49,9 +38,10 @@ export default class PageEditor {
 
             reader.addEventListener('load', ()=>{
                 let imgBase64 = reader.result;
-                let name = "testing";
+                let name = "template";
                 let contentTemplates = [{sectionTitle, sectionText, imgBase64}];
                 this.reqEditPage({name, contentTemplates});
+
             })
         
         })
