@@ -4,29 +4,44 @@ var creds = JSON.parse(sessionStorage.getItem('creds'));
 var username = sessionStorage.getItem("user");
 document.getElementById('username').innerHTML = username;
 
-async function getProjectsData(){
+async function getPageLinks(){
     const options = {
         method: "GET",
         headers: {
           "Authorization": `Bearer ${creds.token}`
         }
       }
-      const response = await fetch(baseURL + "admin/joes-site", options);
+      const response = await fetch(baseURL + "admin", options);
       const data = await response.json()
-      console.log(data);
+      console.log(data.link);
       return data;
 }
 
 
 async function renderProjectsList(){
-    const projectData = await getProjectsData()
-    console.log(projectData);
-    const ul = document.getElementById("projectList")
-    ul.innerHTML = '<li><a href="./page-editor.html"> ' + projectData.page.name  + "</a></li>";
+    const pageLinks = await getPageLinks();
+    const ul = document.getElementById("projectList");
+    ul.innerHTML = pageLinks.links.map(link=> `<li><a href="page-editor.html">${getLinkName(link)}</a></li>`).join("");
+    // put ending url in local storage
+   
 }
 
+// Split link name, store appropraite endpoint in session storage for page editor
 
+function getLinkName(link) {
+  let spliturl = link.split(".com/admin/");
+    return spliturl[1];
+}
 renderProjectsList();
+
+
+
+
+
+
+
+
+
 
 // async showOrders() {
 //     try {
