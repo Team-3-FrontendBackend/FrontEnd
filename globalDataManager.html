@@ -16,15 +16,17 @@
     ></script>
     <script type="module">
 
-      import PageEditor from './js/pageEditor.js';
+      import EditGlobal from './js/globalDataEditor.js';
       
       /*
       GET siteName and Token here
       */
+        const editSettings = new EditGlobal();
 
-      const editor = new PageEditor(siteName, token);
-
-      editor.editPage();
+        editSettings.editGlobalData();
+        /**/
+        
+      
     </script>
   </head>
   <body>
@@ -38,25 +40,26 @@
       </div>
     </header>
     <main>
-      <!-- <iframe
-        src="site-preview.html"
-        frameborder="1"
-        title="Page Preview"
-      ></iframe> -->
       <form action="page-editor.html" method="put" id="editing-tools">
+          <h2>Manage Global Settings</h2>
         <fieldset>
-          Site Content
-        <label for="title"
-          >Section Title
-          <input name="title" type="text" id="title" />
+          <label>
+            Upload Logo
+            <input name="image" type="file" id="logo">
+          </label>
+          <label>
+            Pick a color
+            <input type="color" id="color-picker">
+          </label>
+        </fieldset>
+      <fieldset>
+        Contact Information
+        <label for="email">Enter contact email:
+          <input type="email" id="email" name="email">
         </label>
-        <label for="image"
-          >Upload Image
-          <input name="image" type="file" id="image" />
-        </label>
-        <label for="text"
-          >Section Text
-          <textarea name="text" id="text" cols="30" rows="10"></textarea>
+        <label> 
+          Eneter contact phone number:
+          <input type="tel" id="phone">
         </label>
       </fieldset>
       <input type="submit" value="Create Section" id="submitBtn" />
