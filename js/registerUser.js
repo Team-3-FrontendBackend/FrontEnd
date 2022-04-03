@@ -2,7 +2,7 @@ import ExternalServices from './ExternalServices.js';
 
 function formatUrl(name){
 
-    const url = "/" + name.replaceAll(" ", "-");
+    const url = name.replaceAll(" ", "-");
     return url;
 }
 
