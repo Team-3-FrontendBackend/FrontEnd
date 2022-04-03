@@ -8,9 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/js-base64@3.7.2/base64.min.js" defer></script>
     <title>Site Preview</title>
-    <script>
+    <script type="module">
       import PageRenderer from './js/renderHomePage.js';
 
+      /*Get Token here*/
+      
+      const render = new PageRenderer(Token);
+
+      render.render();
       
     </script>
   </head>

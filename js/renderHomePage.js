@@ -27,8 +27,9 @@ export default class PageRenderer{
         this.token = token;
     }
 
-    render(){
-        let pageInfo = this.getHomePageInfo();
+    async render(){
+        let pageInfo = await this.getHomePageInfo();
+
         let content = pageInfo.page.contentTemplates[0]
         
         const title = content.sectionTtitle;
@@ -38,7 +39,8 @@ export default class PageRenderer{
         const pageHTML = htmlRenderer(title, text, img64);
 
         const homeMain = document.querySelector('#home-page');
-        homeMain.appendChild(pageHTML);
+
+        homeMain.innerHTML = pageHTML;
 
     }
 
@@ -46,7 +48,6 @@ export default class PageRenderer{
 
         let siteUrl = getParam("url");
         const services = new ExternalServices('admin/' + siteUrl);
-
         const pageInfo = await services.getPageRequest(this.token);
 
         return pageInfo;
