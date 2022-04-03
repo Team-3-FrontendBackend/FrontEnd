@@ -33,8 +33,6 @@ export default class Register{
             const siteName = document.querySelector('#site-name').value;
             const url = formatUrl(siteName);
 
-            console.log(JSON.stringify({username, password, confirmPassword, url, siteName}));
-
             this.register({username, password, confirmPassword, url, siteName});
         });
         

@@ -38,7 +38,7 @@ export default class ExternalServices  {
         // pass in authorization token here
         'Authorization': `Bearer ${token}`
       },
-      body: JSON.stringify(pageData)
+      body: [JSON.stringify(pageData)]
     }
     // Figure out how to pass the name to the API, maybe use local storage
     const response = await fetch(baseURL + this.endpoint, options).then(convertToJson);

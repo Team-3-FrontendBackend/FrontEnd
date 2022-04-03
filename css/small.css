@@ -105,10 +105,10 @@ iframe {
     height: 300px;
 }
 
-#editing-tools {
+/* #editing-tools {
     align-items: flex-start;
     margin-left: 20px;
-}
+} */
 
 .form-container {
     background-color: whitesmoke;
@@ -143,4 +143,33 @@ h1 {
     padding: 0.5rem 1rem;
     background-color: var(--prussian-blue);
     color:white;
+}
+
+#editing-tools label,
+#editing-tools input,
+#editing-tools textarea{
+    display:block;
+}
+
+#editing-tools input,
+#editing-tools textarea{
+    width:30rem;
+}
+
+#editing-tools input{
+    height:1.5rem;
+}
+
+#submitBtn{
+    background-color: var(--prussian-blue);
+    width:10rem !important;
+    height: 3rem !important;
+    color:white;
+    border-radius: 4px;
+}
+
+#editing-tools{
+    align-items:center;
+    font-family:"Lato", sans-serif;
+    padding-bottom:3rem;
 }

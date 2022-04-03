@@ -11,7 +11,6 @@ function htmlRenderer(title, text, imgBase64) {
     }
     
     sectionDiv += `</div>`;
-
 }
 
 export default class PageEditor {
@@ -21,8 +20,14 @@ export default class PageEditor {
         this.siteName = siteName;
     }
 
-    editPage(){
-
+    async editPage(pageData){
+        try{
+            this.apiMessage = await this.services.apiRequest(pageData, this.token); 
+            console.log(this.apiMessage);
+        }
+        catch(err){
+            console.error(err);
+        }
     }
     getValues(){
         document.querySelector('#submitBtn').addEventListener('click', (e)=>{
@@ -40,7 +45,8 @@ export default class PageEditor {
 
             reader.addEventListener('load', ()=>{
                 let imgBase64 = reader.result;
-                console.log(JSON.stringify({sectionTitle, sectionText, imgBase64}));
+                console.log(JSON.stringify([{sectionTitle, sectionText, imgBase64}]));
+                this.editPage({sectionTitle, sectionText, imgBase64})
             })
         })
     }
