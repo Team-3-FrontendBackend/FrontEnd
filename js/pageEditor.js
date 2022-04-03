@@ -14,22 +14,26 @@ function htmlRenderer(title, text, imgBase64) {
 }
 
 export default class PageEditor {
-    constructor(siteName) {
-        this.token = null;
+    constructor(siteName, token) {
+        this.token = token;
         this.services = new ExternalServices('admin/' + siteName);
         this.siteName = siteName;
     }
 
-    async editPage(pageData){
+    async reqEditPage(pageData){
         try{
-            this.apiMessage = await this.services.apiRequest(pageData, this.token); 
+
+            this.apiMessage = await this.services.updatePageRequest(pageData, this.token); 
+            const pageInfo = await this.services.getPageRequest(this.token);
+
             console.log(this.apiMessage);
+            console.log(pageInfo);
         }
         catch(err){
             console.error(err);
         }
     }
-    getValues(){
+    editPage(){
         document.querySelector('#submitBtn').addEventListener('click', (e)=>{
 
             let sectionTitle = document.querySelector('#title').value;
@@ -45,9 +49,11 @@ export default class PageEditor {
 
             reader.addEventListener('load', ()=>{
                 let imgBase64 = reader.result;
-                console.log(JSON.stringify([{sectionTitle, sectionText, imgBase64}]));
-                this.editPage({sectionTitle, sectionText, imgBase64})
+                let name = "testing";
+                let contentTemplates = [{sectionTitle, sectionText, imgBase64}];
+                this.reqEditPage({name, contentTemplates});
             })
+        
         })
     }
 }
