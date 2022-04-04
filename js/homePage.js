@@ -20,6 +20,8 @@ async function getPageLinks(){
 
 async function renderProjectsList(){
     const pageLinks = await getPageLinks();
+    // store home url in session storage
+    window.sessionStorage.setItem('homeURL',pageLinks.links[0]);
     const ul = document.getElementById("projectList");
     ul.innerHTML = pageLinks.links.map(link=> `<li><a href="page-editor.html">${getLinkName(link)}</a></li>`).join("");
     // put ending url in local storage
