@@ -39,6 +39,10 @@ export default class EditGlobal{
             let img = upload.files[0];
             const reader = new FileReader();
             reader.readAsDataURL(img);
+            let siteName = sessionStorage.getItem("newHomePage");
+            siteName = siteName.substring(1);
+            document.querySelector('#home-link').innerHTML = `<a href="site-preview.html?url=${siteName}">Visit your new home page</a>`;
+
 
             reader.addEventListener('load', ()=>{
                 /*logoUrl is actual base64 encoded img*/
