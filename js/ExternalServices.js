@@ -65,4 +65,17 @@ export default class ExternalServices  {
     const response = await fetch(baseURL + this.endpoint, options).then(convertToJson);
     return response;
   }
+  async postHomepage(token) {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type' : 'application/json',
+        'Authorization' : `Bearer ${token}` 
+      },
+      body: JSON.stringify(user)
+    }
+    // Instead of baseURL + login, I changed to make it reusable.
+    const response = await fetch(baseURL + this.endpoint, options).then(convertToJson);
+    return response;
+  }
 }
