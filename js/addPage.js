@@ -18,16 +18,24 @@ async function addPage(){
 }
 }
 
+
 async function createPage(pageName){
   const options = {
       method: "POST",
       headers: {
+        'Content-Type': 'application/json',
         "Authorization": `Bearer ${creds.token}`
-      }
+      },
+      body: JSON.stringify({name: pageName, contentTemplates: [{}]})
     }
     // "admin/joes-site" will be replaced with a dynamic value after the beackend team finishes that endpoint
-    const response = await fetch(baseURL + "admin/joes-site/" + pageName , options);
-    const data = await response.json()
+    // get home url from session storage
+    const homeURL = sessionStorage.getItem('homeURL')
+    const newPageURL = homeURL + '/' + pageName
+    const response = await fetch(newPageURL, options);
+    const data = await response.json();
+    location.reload();
     console.log(data);
     return data;
 }
+
