@@ -55,4 +55,14 @@ export default class ExternalServices  {
     const response = await fetch(baseURL + this.endpoint, options).then(convertToJson);
     return response;
   }
+  async getLivePageRequest(token){
+    const options = {
+      method : 'GET',
+      headers : {
+        // 'Content-Type': 'application/json',
+      }
+    }
+    const response = await fetch(baseURL + this.endpoint, options).then(convertToJson);
+    return response;
+  }
 }

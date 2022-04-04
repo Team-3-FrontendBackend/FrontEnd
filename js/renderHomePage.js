@@ -1,18 +1,20 @@
 import ExternalServices from './ExternalServices.js';
+import { renderGlobalData } from './utils.js';
 
-function htmlRenderer(title, text, imgBase64) {
+function htmlRenderer(pageContent) {
     
-    let sectionDiv = `<div class="section">
+    let title = pageContent.sectionTitle;
+    let text = pageContent.sectionText;
+    let imgBase64 = pageContent.imgBase64;
+
+    let div = `
+    <div>
     <h2>${title}</h2>
+    <img src="${imgBase64}">
     <p>${text}</p>`;
 
-    if(typeof imgBase64 != undefined){
-        sectionDiv += `<img src="${imgBase64}">`;
-    }
-    
-    sectionDiv += `</div>`;
+    return div;
 
-    return sectionDiv;
 }
 
 function getParam(params){
@@ -28,27 +30,23 @@ export default class PageRenderer{
     }
 
     async render(){
-        let pageInfo = await this.getHomePageInfo();
+        let pageContent = await this.getHomePageInfo();
+        console.log(pageContent);
 
-        let content = pageInfo.page.contentTemplates[0]
-        
-        const title = content.sectionTtitle;
-        const text = content.sectionTtext;
-        const img64 = content.imgBase64;
-
-        const pageHTML = htmlRenderer(title, text, img64);
+        const pageHTML = htmlRenderer(pageContent.content[0]);
 
         const homeMain = document.querySelector('#home-page');
 
         homeMain.innerHTML = pageHTML;
 
+        renderGlobalData(pageContent);
     }
 
     async getHomePageInfo(){
 
         let siteUrl = getParam("url");
-        const services = new ExternalServices('admin/' + siteUrl);
-        const pageInfo = await services.getPageRequest(this.token);
+        const services = new ExternalServices('live/' + siteUrl);
+        const pageInfo = await services.getLivePageRequest(this.token);
 
         return pageInfo;
     }

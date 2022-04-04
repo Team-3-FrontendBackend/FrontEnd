@@ -48,4 +48,29 @@ url: "https://cms-societies.herokuapp.com/admin/test-page"
 [[Prototype]]: Response
 pageEditor.js:31 
 
+
+EXAMPLE OF GET LIVE HOMEPAGE ENDPOINT
+
+{headerLogoUrl: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//2Q==', headerBackgroundColor: '#b02121', navLinks: Array(2), footerContact: 'testingemail/123', footerSocials: {…}, …}
+content: Array(1)
+0:
+imgBase64: ""
+sectionText: "text"
+sectionTitle: "title"
+[[Prototype]]: Object
+length: 1
+[[Prototype]]: Array(0)
+footerContact: "testingemail/123"
+footerSocials:
+facebook: "string"
+iBelong: "string"
+instagram: "string"
+[[Prototype]]: Object
+headerBackgroundColor: "#b02121"
+headerLogoUrl: ""
+name: "template"
+navLinks: Array(2)
+0: "string"
+1: "string/new"
+
 ```
