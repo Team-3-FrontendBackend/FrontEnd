@@ -2,7 +2,9 @@ import ExternalServices from './ExternalServices.js';
 
 function formatUrl(name){
 
-    const url = name.replaceAll(" ", "-");
+    const pageName = name.replaceAll(" ", "-");
+    const url = '/' + pageName;
+    
     return url;
 }
 
@@ -18,8 +20,7 @@ export default class Register{
             this.apiMessage = await this.services.apiRequest(userInfo);
             console.log(this.apiMessage);
 
-            // this.servicesPost = new ExternalServices('admin/' + url);
-            // window.sessionStorage.setItem('homePage', url);
+            window.sessionStorage.setItem('newHomePage', url);
 
             window.location.href = "login.html";   
         }

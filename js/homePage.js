@@ -22,20 +22,17 @@ async function renderProjectsList(){
 
     const pageLinks = await getPageLinks();
     // store home url in session storage
-    window.sessionStorage.setItem('homeURL',pageLinks.links[0]);
+    window.sessionStorage.setItem('homeURL',pageLinks.links[1]);
 
 
-    let siteUrl = getLinkName(pageLinks.links[0]);
+    let siteUrl = getLinkName(pageLinks.links[1]);
     
     const ul = document.getElementById("projectList");
-    //ul.innerHTML = pageLinks.links.map(link=> `<li><a href="page-editor.html">${getLinkName(link)}</a></li>`).join("");
     ul.innerHTML = `
     <li><a href="site-preview.html?url=${siteUrl}">Visit your Website: ${siteUrl}</a></li>
     <li><a href="page-editor.html?url=${siteUrl}">Edit your site's content</a></li>
     <li><a href="globalDataManager.html?url=${siteUrl}">Edit your site's style</a></li>
     `;
-
-    // put ending url in local storage
     
 }
 

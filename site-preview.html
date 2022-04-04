@@ -9,8 +9,10 @@
     <title>Document</title>
     <script type="module">
       import PageRenderer from './js/renderHomePage.js';
+      
+      let creds = JSON.parse(sessionStorage.getItem('creds'));
 
-      const render = new PageRenderer(token);
+      const render = new PageRenderer(creds.token);
 
       render.render();
       

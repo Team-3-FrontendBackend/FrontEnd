@@ -3,10 +3,10 @@ import ExternalServices from './ExternalServices.js';
 
 
 export default class PageEditor {
-    constructor(token) {
+    constructor(token, siteName) {
         this.token = token;
         this.services = new ExternalServices('admin/' + siteName);
-        this.siteName = "";
+        this.siteName = siteName;
     }
 
     async reqEditPage(pageData){
@@ -14,6 +14,8 @@ export default class PageEditor {
 
             this.apiMessage = await this.services.updatePageRequest(pageData, this.token); 
             const pageInfo = await this.services.getPageRequest(this.token);
+            console.log(this.apiMessage);
+            console.log(pageInfo);
             
             document.querySelector('#home-link').innerHTML = `<a href="site-preview.html?url=${this.siteName}">Visit your new home page</a>`;
             
