@@ -18,11 +18,10 @@
 
       import EditGlobal from './js/globalDataEditor.js';
       
-      /*
-      GET siteName and Token here
-      */
-     /**/
-        const editSettings = new EditGlobal(token);
+
+        let creds = JSON.parse(sessionStorage.getItem('creds'));
+
+        const editSettings = new EditGlobal(creds.token);
 
         editSettings.editGlobalData();
         /**/

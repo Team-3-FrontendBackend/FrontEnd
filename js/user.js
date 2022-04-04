@@ -1,9 +1,26 @@
 import ExternalServices from './ExternalServices.js';
 
+async function postHomepage(endpoint, token, content) {
+  const baseURL = 'https://cms-societies.herokuapp.com/';
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type' : 'application/json',
+      'Authorization' : `Bearer ${token}` 
+    },
+    body: JSON.stringify(content)
+  }
+  // Instead of baseURL + login, I changed to make it reusable.
+   const response = await fetch(baseURL + endpoint, options)/*.then(convertToJson)*/;
+   return response;
+}
+
 export default class User {
   constructor() {
     this.token = null;
     this.services = new ExternalServices('login');
+    this.servicesGetUrl = new ExternalServices('admin');
+    
   }
   async login(creds) {
     // I built the login method with a callback: next. This makes it much more flexible...
@@ -13,7 +30,35 @@ export default class User {
 
 
       this.token = await this.services.apiRequest(creds);
+      this.urlArray = await this.servicesGetUrl.getPageLinks(this.token.token);
+      // console.log(this.token.token);
+      // console.log(this.urlArray.links.length);
+      const urlArraySize = this.urlArray.links.length;
+    
+      if(urlArraySize <= 1){
+
+        let siteNameUrl = sessionStorage.getItem('newHomePage');
+        let siteName = siteNameUrl.substring(1);
+        console.log(siteName);
+
+        
+        const name = `${siteName}`;
+        // const postPage = new ExternalServices('admin/' + siteName);
+
+        try{
+        const postEndpoint = 'admin' + '/' + siteName;
+        console.log(siteName);
+        const apiPostMessage = await postHomepage(postEndpoint, this.token.token, {name});
+        console.log(apiPostMessage);
+        }
+
+        catch(err){
+          console.log(err);
+        }
+      }
+
       window.sessionStorage.setItem('creds',JSON.stringify(this.token));
+
       window.location.href = "home.html";
       
     } 

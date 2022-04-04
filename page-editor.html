@@ -16,17 +16,17 @@
     ></script>
     <script type="module">
 
-      import PageEditor from './js/pageEditor.js';
-      
-      /*
-      GET siteName and Token here
-      */
-    //  let siteName = "/joes-site";
-    //  let token = "";
+    import PageEditor from './js/pageEditor.js';
+    import { getParam } from './js/utils.js';
+    
+    let siteName = getParam('url');
+  
+    const creds = JSON.parse(sessionStorage.getItem("creds"));
+    // console.log(creds.token);
+    // console.log(siteName);
+    const editor = new PageEditor(creds.token, siteName);
 
-      const editor = new PageEditor(siteName, token);
-
-      editor.editPage();
+    editor.editPage();
     </script>
   </head>
   <body>

@@ -20,3 +20,10 @@ export function renderGlobalData(pageContent){
     targetEmail.innerHTML = email;
     targetPhone.innerHTML = phone;
 }
+
+export function getParam(params){
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const productInfo = urlParams.get(params);
+    return productInfo;
+  }
