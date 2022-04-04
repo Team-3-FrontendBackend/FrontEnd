@@ -12,10 +12,15 @@ export default class Register{
         this.services = new ExternalServices('signup');
     }
 
-    async register(userInfo){
+    async register(userInfo, url){
         
         try {
             this.apiMessage = await this.services.apiRequest(userInfo);
+            console.log(this.apiMessage);
+
+            // this.servicesPost = new ExternalServices('admin/' + url);
+            // window.sessionStorage.setItem('homePage', url);
+
             window.location.href = "login.html";   
         }
         catch(err){
@@ -33,7 +38,7 @@ export default class Register{
             const siteName = document.querySelector('#site-name').value;
             const url = formatUrl(siteName);
 
-            this.register({username, password, confirmPassword, url, siteName});
+            this.register({username, password, confirmPassword, url, siteName}, url);
         });
         
     }

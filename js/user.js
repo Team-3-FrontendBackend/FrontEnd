@@ -15,7 +15,6 @@ export default class User {
       this.token = await this.services.apiRequest(creds);
       window.sessionStorage.setItem('creds',JSON.stringify(this.token));
       window.location.href = "home.html";
-      // console.log(this.token)
       
     } 
     catch(err) {

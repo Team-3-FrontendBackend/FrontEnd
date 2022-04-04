@@ -13,7 +13,7 @@ async function getPageLinks(){
       }
       const response = await fetch(baseURL + "admin", options);
       const data = await response.json()
-      console.log(data.link);
+      console.log(data);
       return data;
 }
 
@@ -35,23 +35,3 @@ function getLinkName(link) {
     return spliturl[1];
 }
 renderProjectsList();
-
-
-
-
-
-
-
-
-
-
-// async showOrders() {
-//     try {
-//       const orders = await this.services.getOrders(this.token);
-//       this.mainElement.innerHTML = orderHtml();
-//       const parent = document.querySelector("#orders tbody");
-//       parent.innerHTML = orders.map(order=> `<tr><td>${order.id}</td><td>${new Date(order.orderDate).toLocaleDateString("en-US")}</td><td>${order.items.length}</td><td>${order.orderTotal}</td></tr>`).join("");
-//     } catch(err) {
-//       console.log(err);
-//     }
-//   }
