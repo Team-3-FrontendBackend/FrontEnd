@@ -21,12 +21,12 @@
       /*
       GET siteName and Token here
       */
-        const editSettings = new EditGlobal();
+     /**/
+        const editSettings = new EditGlobal(token);
 
         editSettings.editGlobalData();
         /**/
         
-      
     </script>
   </head>
   <body>
@@ -40,7 +40,7 @@
       </div>
     </header>
     <main>
-      <form action="page-editor.html" method="put" id="editing-tools">
+      <form method="put" id="editing-tools">
           <h2>Manage Global Settings</h2>
         <fieldset>
           <label>
@@ -62,7 +62,7 @@
           <input type="tel" id="phone">
         </label>
       </fieldset>
-      <input type="submit" value="Create Section" id="submitBtn" />
+      <input type="submit" value="Edit Data" id="submitBtn" />
       </form>
       <div id="home-link"></div>
     </main>
