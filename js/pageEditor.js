@@ -3,10 +3,10 @@ import ExternalServices from './ExternalServices.js';
 
 
 export default class PageEditor {
-    constructor(siteName, token) {
+    constructor(token) {
         this.token = token;
         this.services = new ExternalServices('admin/' + siteName);
-        this.siteName = siteName;
+        this.siteName = "";
     }
 
     async reqEditPage(pageData){

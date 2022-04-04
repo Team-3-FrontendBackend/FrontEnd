@@ -1,5 +1,5 @@
 import ExternalServices from './ExternalServices.js';
-import { renderGlobalData } from './utils.js';
+import { renderGlobalData, getParam } from './utils.js';
 
 function htmlRenderer(pageContent) {
     
@@ -17,12 +17,7 @@ function htmlRenderer(pageContent) {
 
 }
 
-function getParam(params){
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const productInfo = urlParams.get(params);
-    return productInfo;
-  }
+
 
 export default class PageRenderer{
     constructor(token){
