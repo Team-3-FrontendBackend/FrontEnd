@@ -35,7 +35,6 @@ export default class ExternalServices  {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        // pass in authorization token here
         'Authorization': `Bearer ${token}`,
       },
       body: JSON.stringify(pageData)
