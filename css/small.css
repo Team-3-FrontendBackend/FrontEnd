@@ -198,3 +198,7 @@ h1 {
     background-color:var(--heliotrope-gray);
 
 }
+
+#submitBtn:hover {
+background-color: var(--heliotrope-gray);
+}
