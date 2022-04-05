@@ -15,17 +15,10 @@
       defer
     ></script>
     <script type="module">
-
       import EditGlobal from './js/globalDataEditor.js';
-      
-
-        let creds = JSON.parse(sessionStorage.getItem('creds'));
-
-        const editSettings = new EditGlobal(creds.token);
-
-        editSettings.editGlobalData();
-        /**/
-        
+      let creds = JSON.parse(sessionStorage.getItem('creds'));
+      const editSettings = new EditGlobal(creds.token);
+      editSettings.editGlobalData();
     </script>
   </head>
   <body>
@@ -66,7 +59,7 @@
     </main>
     <footer>
       <section>
-        <h3>This website was designed by [Team 3]</h3>
+        <h3>This website was designed by Team 3</h3>
         <div id="footer-sections">
           <section id="social-media">
             <h4>Follow Us</h4>
@@ -78,20 +71,12 @@
           </section>
           <section id="contact-info">
             <h4>Contact Us</h4>
-            <p>Email: fake@email.com</p>
-            <p>Phone Number: 111-111-111</p>
+            <p>Email: team3@gmail.com</p>
+            <p>Phone Number: (111) 111-111</p>
           </section>
           <section id="about-us">
             <h4>About Web Projects</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              repgit rehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            <p>Web Projects is a tool for creating custom web pages.</p>
           </section>
         </div>
       </section>
