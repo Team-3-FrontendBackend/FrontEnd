@@ -74,7 +74,10 @@ export default class User {
       document.querySelector('#loginButton').addEventListener('click', (e) => {
         const username = document.querySelector('#username').value;
         const password = document.querySelector('#password').value;
+        const homeName = document.querySelector("#sitename").value;
+        const siteEndpoint = "/" + homeName;
         window.sessionStorage.setItem('user', username);
+        window.sessionStorage.setItem('newHomePage',siteEndpoint);
         this.login({username, password});
       });
   }
