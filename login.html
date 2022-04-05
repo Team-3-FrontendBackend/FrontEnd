@@ -13,6 +13,9 @@
         // Advantages to putting it here: one less file to request and download.
         // Disadvantages: it breaks the pattern we have established with our other pages, and the separation of concerns...
         import User from "./js/user.js";
+        sessionStorage.removeItem('user');
+        sessionStorage.removeItem('creds');
+        sessionStorage.removeItem('homeURL');
 
         const myUser = new User();
         myUser.setLogin();
@@ -38,9 +41,8 @@
                 </label>
                 <label>
                     Password
-                    <input name="password" id="password" type="text" required/>
+                    <input name="password" id="password" type="password" required/>
                 </label>
-                
                 <input type="hidden" name="action" value="login">
             </form>
             <button id="loginButton">Login</button>
