@@ -184,12 +184,19 @@ h1 {
 
 }
 
+h1 {
+    font-family: "Lato", "Sans-serif";
+
+}
+
 #projectList li a{
     font-size: 1.4em;
     display: block;
     padding: 1em;
     text-decoration: none;
     color: #000522;
+    font-family: "Lato", "Sans-serif";
+
     
 
 }
